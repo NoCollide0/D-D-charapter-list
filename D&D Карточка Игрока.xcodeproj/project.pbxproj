@@ -25,6 +25,13 @@
 		7B9687372A99272A000A2526 /* green_circle.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B9687352A992729000A2526 /* green_circle.json */; };
 		7B98AFCC2A97C395003F0A33 /* animation_llpeo0dn.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B98AFCB2A97C395003F0A33 /* animation_llpeo0dn.json */; };
 		7B9E86412A9E3C7100A5CCD3 /* AttackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E86402A9E3C7100A5CCD3 /* AttackVC.swift */; };
+		7BB0768D2AD1B9CE00313457 /* fire5.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BB0768C2AD1B9CE00313457 /* fire5.png */; };
+		7BB076932AD1BB3300313457 /* goal (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 7BB0768E2AD1BB3300313457 /* goal (1).png */; };
+		7BB076942AD1BB3400313457 /* swords (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 7BB0768F2AD1BB3300313457 /* swords (1).png */; };
+		7BB076952AD1BB3400313457 /* armor (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 7BB076902AD1BB3300313457 /* armor (1).png */; };
+		7BB076962AD1BB3400313457 /* ideas (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 7BB076912AD1BB3300313457 /* ideas (1).png */; };
+		7BB076972AD1BB3400313457 /* running (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 7BB076922AD1BB3300313457 /* running (1).png */; };
+		7BB076992AD1BF6600313457 /* d46e35cccc5720c2991f5ecf61c111a8_11zon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BB076982AD1BF6600313457 /* d46e35cccc5720c2991f5ecf61c111a8_11zon.png */; };
 		7BBF4FAC2A4073F5009CA261 /* ConstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBF4FAB2A4073F5009CA261 /* ConstVC.swift */; };
 		7BBF4FAE2A407E23009CA261 /* IntellectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBF4FAD2A407E23009CA261 /* IntellectVC.swift */; };
 		7BC081EF2ACB418E00AB5B03 /* CharapterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC081EE2ACB418E00AB5B03 /* CharapterData.swift */; };
@@ -50,6 +57,13 @@
 		7B9687352A992729000A2526 /* green_circle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = green_circle.json; sourceTree = "<group>"; };
 		7B98AFCB2A97C395003F0A33 /* animation_llpeo0dn.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation_llpeo0dn.json; sourceTree = "<group>"; };
 		7B9E86402A9E3C7100A5CCD3 /* AttackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackVC.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		7BB0768C2AD1B9CE00313457 /* fire5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fire5.png; sourceTree = "<group>"; };
+		7BB0768E2AD1BB3300313457 /* goal (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "goal (1).png"; sourceTree = "<group>"; };
+		7BB0768F2AD1BB3300313457 /* swords (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "swords (1).png"; sourceTree = "<group>"; };
+		7BB076902AD1BB3300313457 /* armor (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "armor (1).png"; sourceTree = "<group>"; };
+		7BB076912AD1BB3300313457 /* ideas (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ideas (1).png"; sourceTree = "<group>"; };
+		7BB076922AD1BB3300313457 /* running (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "running (1).png"; sourceTree = "<group>"; };
+		7BB076982AD1BF6600313457 /* d46e35cccc5720c2991f5ecf61c111a8_11zon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = d46e35cccc5720c2991f5ecf61c111a8_11zon.png; sourceTree = "<group>"; };
 		7BBF4FAB2A4073F5009CA261 /* ConstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstVC.swift; sourceTree = "<group>"; };
 		7BBF4FAD2A407E23009CA261 /* IntellectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntellectVC.swift; sourceTree = "<group>"; };
 		7BC081EE2ACB418E00AB5B03 /* CharapterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharapterData.swift; sourceTree = "<group>"; };
@@ -94,6 +108,7 @@
 				7B0341A92A28087C00DFF6FB /* Main.storyboard */,
 				7B0341AC2A28087E00DFF6FB /* Assets.xcassets */,
 				7B2FB71D2A45D0310047DBF5 /* HpVC.swift */,
+				7BB076772AD1A46800313457 /* images */,
 				7B8553AC2A2BB5A60081AA55 /* StatsDetail */,
 				7B9E863F2A9E3C2900A5CCD3 /* etc */,
 				7B0341AE2A28087E00DFF6FB /* LaunchScreen.storyboard */,
@@ -141,6 +156,20 @@
 				7B9E86402A9E3C7100A5CCD3 /* AttackVC.swift */,
 			);
 			path = etc;
+			sourceTree = "<group>";
+		};
+		7BB076772AD1A46800313457 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				7BB076902AD1BB3300313457 /* armor (1).png */,
+				7BB0768E2AD1BB3300313457 /* goal (1).png */,
+				7BB076912AD1BB3300313457 /* ideas (1).png */,
+				7BB076922AD1BB3300313457 /* running (1).png */,
+				7BB0768F2AD1BB3300313457 /* swords (1).png */,
+				7BB0768C2AD1B9CE00313457 /* fire5.png */,
+				7BB076982AD1BF6600313457 /* d46e35cccc5720c2991f5ecf61c111a8_11zon.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,9 +237,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B98AFCC2A97C395003F0A33 /* animation_llpeo0dn.json in Resources */,
+				7BB076972AD1BB3400313457 /* running (1).png in Resources */,
+				7BB076992AD1BF6600313457 /* d46e35cccc5720c2991f5ecf61c111a8_11zon.png in Resources */,
+				7BB076942AD1BB3400313457 /* swords (1).png in Resources */,
+				7BB0768D2AD1B9CE00313457 /* fire5.png in Resources */,
 				7B9687372A99272A000A2526 /* green_circle.json in Resources */,
 				7B0341B02A28087E00DFF6FB /* LaunchScreen.storyboard in Resources */,
+				7BB076932AD1BB3300313457 /* goal (1).png in Resources */,
+				7BB076962AD1BB3400313457 /* ideas (1).png in Resources */,
 				7B0341AD2A28087E00DFF6FB /* Assets.xcassets in Resources */,
+				7BB076952AD1BB3400313457 /* armor (1).png in Resources */,
 				7B0341AB2A28087C00DFF6FB /* Main.storyboard in Resources */,
 				7B9687362A99272A000A2526 /* red_circle.json in Resources */,
 			);
@@ -379,8 +415,9 @@
 		7B0341B52A28087E00DFF6FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W89H83NZTM;
@@ -408,8 +445,9 @@
 		7B0341B62A28087E00DFF6FB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W89H83NZTM;
