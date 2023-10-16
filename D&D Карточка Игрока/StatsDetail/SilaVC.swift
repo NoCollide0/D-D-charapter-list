@@ -19,89 +19,106 @@ class SilaVC: UIViewController {
     //Сохранение значения силы после изменения и присвоение значения лейблу с переводом в инт и далее в стринг
     //А так же отправка значения силы через notification
     @IBAction func SilaChange(_ sender: UIStepper) {
-        defaults.set(String(Int(SilaStepper.value)), forKey: "silaValue")
+        ///defaults.set(String(Int(SilaStepper.value)), forKey: "silaValue")
+        charapter.silaValue = String(Int(SilaStepper.value))
         silaLabel.text = String(Int(SilaStepper.value))
                 
         //Бонус от силы
         switch SilaStepper.value {
         case 1:
             bonusSila.text = "-5"
-            defaults.set(bonusSila.text, forKey: "bonusSila")
+            ///defaults.set(bonusSila.text, forKey: "bonusSila")
+            charapter.bonusSila = bonusSila.text
             secondaryStatUpdate()
             break
         case 2...3:
             bonusSila.text = "-4"
-            defaults.set(bonusSila.text, forKey: "bonusSila")
+            ///defaults.set(bonusSila.text, forKey: "bonusSila")
+            charapter.bonusSila = bonusSila.text
             secondaryStatUpdate()
             break
         case 4...5:
             bonusSila.text = "-3"
-            defaults.set(bonusSila.text, forKey: "bonusSila")
+            ///defaults.set(bonusSila.text, forKey: "bonusSila")
+            charapter.bonusSila = bonusSila.text
             secondaryStatUpdate()
             break
         case 6...7:
             bonusSila.text = "-2"
-            defaults.set(bonusSila.text, forKey: "bonusSila")
+            ///defaults.set(bonusSila.text, forKey: "bonusSila")
+            charapter.bonusSila = bonusSila.text
             secondaryStatUpdate()
             break
         case 8...9:
             bonusSila.text = "-1"
-            defaults.set(bonusSila.text, forKey: "bonusSila")
+            ///defaults.set(bonusSila.text, forKey: "bonusSila")
+            charapter.bonusSila = bonusSila.text
             secondaryStatUpdate()
             break
         case 10...11:
             bonusSila.text = "0"
-            defaults.set(bonusSila.text, forKey: "bonusSila")
+            ///defaults.set(bonusSila.text, forKey: "bonusSila")
+            charapter.bonusSila = bonusSila.text
             secondaryStatUpdate()
             break
         case 12...13:
             bonusSila.text = "+1"
-            defaults.set(bonusSila.text, forKey: "bonusSila")
+            ///defaults.set(bonusSila.text, forKey: "bonusSila")
+            charapter.bonusSila = bonusSila.text
             secondaryStatUpdate()
             break
         case 14...15:
             bonusSila.text = "+2"
-            defaults.set(bonusSila.text, forKey: "bonusSila")
+            ///defaults.set(bonusSila.text, forKey: "bonusSila")
+            charapter.bonusSila = bonusSila.text
             secondaryStatUpdate()
             break
         case 16...17:
             bonusSila.text = "+3"
-            defaults.set(bonusSila.text, forKey: "bonusSila")
+            ///defaults.set(bonusSila.text, forKey: "bonusSila")
+            charapter.bonusSila = bonusSila.text
             secondaryStatUpdate()
             break
         case 18...19:
             bonusSila.text = "+4"
-            defaults.set(bonusSila.text, forKey: "bonusSila")
+            ///defaults.set(bonusSila.text, forKey: "bonusSila")
+            charapter.bonusSila = bonusSila.text
             secondaryStatUpdate()
             break
         case 20...21:
             bonusSila.text = "+5"
-            defaults.set(bonusSila.text, forKey: "bonusSila")
+            ///defaults.set(bonusSila.text, forKey: "bonusSila")
+            charapter.bonusSila = bonusSila.text
             secondaryStatUpdate()
             break
         case 22...23:
             bonusSila.text = "+6"
-            defaults.set(bonusSila.text, forKey: "bonusSila")
+            ///defaults.set(bonusSila.text, forKey: "bonusSila")
+            charapter.bonusSila = bonusSila.text
             secondaryStatUpdate()
             break
         case 24...25:
             bonusSila.text = "+7"
-            defaults.set(bonusSila.text, forKey: "bonusSila")
+            ///defaults.set(bonusSila.text, forKey: "bonusSila")
+            charapter.bonusSila = bonusSila.text
             secondaryStatUpdate()
             break
         case 26...27:
             bonusSila.text = "+8"
-            defaults.set(bonusSila.text, forKey: "bonusSila")
+            ///defaults.set(bonusSila.text, forKey: "bonusSila")
+            charapter.bonusSila = bonusSila.text
             secondaryStatUpdate()
             break
         case 28...29:
             bonusSila.text = "+9"
-            defaults.set(bonusSila.text, forKey: "bonusSila")
+            ///defaults.set(bonusSila.text, forKey: "bonusSila")
+            charapter.bonusSila = bonusSila.text
             secondaryStatUpdate()
             break
         case 30:
             bonusSila.text = "+10"
-            defaults.set(bonusSila.text, forKey: "bonusSila")
+            ///defaults.set(bonusSila.text, forKey: "bonusSila")
+            charapter.bonusSila = bonusSila.text
             secondaryStatUpdate()
             break
         default:
@@ -118,19 +135,25 @@ class SilaVC: UIViewController {
     @IBAction func AtleticSkillChange(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            defaults.set(AtleticSkill.selectedSegmentIndex, forKey: "AtleticSkill")
+            ///defaults.set(AtleticSkill.selectedSegmentIndex, forKey: "AtleticSkill")
+            charapter.atleticSkill = AtleticSkill.selectedSegmentIndex
             atleticSkillValue = 0
-            defaults.set(atleticSkillValue, forKey: "atleticSkillValue")
+            ///defaults.set(atleticSkillValue, forKey: "atleticSkillValue")
+            charapter.atleticSkillValue = atleticSkillValue
             atleticUpdate()
         case 1:
-            defaults.set(AtleticSkill.selectedSegmentIndex, forKey: "AtleticSkill")
+            ///defaults.set(AtleticSkill.selectedSegmentIndex, forKey: "AtleticSkill")
+            charapter.atleticSkill = AtleticSkill.selectedSegmentIndex
             atleticSkillValue = 2
-            defaults.set(atleticSkillValue, forKey: "atleticSkillValue")
+            ///defaults.set(atleticSkillValue, forKey: "atleticSkillValue")
+            charapter.atleticSkillValue = atleticSkillValue
             atleticUpdate()
         case 2:
-            defaults.set(AtleticSkill.selectedSegmentIndex, forKey: "AtleticSkill")
+            ///defaults.set(AtleticSkill.selectedSegmentIndex, forKey: "AtleticSkill")
+            charapter.atleticSkill = AtleticSkill.selectedSegmentIndex
             atleticSkillValue = 4
-            defaults.set(atleticSkillValue, forKey: "atleticSkillValue")
+            ///defaults.set(atleticSkillValue, forKey: "atleticSkillValue")
+            charapter.atleticSkillValue = atleticSkillValue
             atleticUpdate()
         default:
             print("AtleticSelectorError")
@@ -143,19 +166,24 @@ class SilaVC: UIViewController {
         super.viewDidLoad()
         
         //Загрузка бонуса силы
-        bonusSila.text = defaults.string(forKey: "bonusSila") ?? "0"
+        ///bonusSila.text = defaults.string(forKey: "bonusSila") ?? "0"
+        bonusSila.text = charapter.bonusSila
         
         //Загрузка значения силы в степпер и в лейбл при загрузке экрана
-        SilaStepper.value = Double(defaults.string(forKey: "silaValue") ?? "10")!
+        ///SilaStepper.value = Double(defaults.string(forKey: "silaValue") ?? "10")!
+        SilaStepper.value = Double(charapter.silaValue!)!
         silaLabel.text = String(Int(SilaStepper.value))
         
         //Загрузки подстатов
            //Атлетика
                //Загрузка селектора мастерства
-        AtleticSkill.selectedSegmentIndex = defaults.integer(forKey: "AtleticSkill")
+        ///AtleticSkill.selectedSegmentIndex = defaults.integer(forKey: "AtleticSkill")
+        AtleticSkill.selectedSegmentIndex = charapter.atleticSkill
                //Загрузка общего бонуса атлетики
-        AtleticBonus.text = defaults.string(forKey: "AtleticBonus.text") ?? "0"
-        atleticSkillValue = defaults.integer(forKey: "atleticSkillValue")
+        ///AtleticBonus.text = defaults.string(forKey: "AtleticBonus.text") ?? "0"
+        AtleticBonus.text = charapter.atleticBonusText
+        ///atleticSkillValue = defaults.integer(forKey: "atleticSkillValue")
+        atleticSkillValue = charapter.atleticSkillValue
         
                 
         // Do any additional setup after loading the view.
@@ -165,7 +193,8 @@ class SilaVC: UIViewController {
         //Атлетика
     func atleticUpdate() {
         AtleticBonus.text = "\(Int(bonusSila.text!)! + atleticSkillValue)"
-        defaults.set(AtleticBonus.text, forKey: "AtleticBonus.text")
+        ///defaults.set(AtleticBonus.text, forKey: "AtleticBonus.text")
+        charapter.atleticBonusText = AtleticBonus.text!
     }
     
     //Обновление всех вторичных статов

@@ -18,7 +18,7 @@ class AttackVC: UIViewController, UITextFieldDelegate {
     
     var scrollView: UIScrollView!
     
-    var textFieldConter = 0
+    var textFieldConter3 = 0
     
     var newField: Bool?
     
@@ -31,7 +31,9 @@ class AttackVC: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         attackData = (defaults.array(forKey: "attackData") as? [String]) ?? ["1!lfds"]
-        textFieldConter = defaults.integer(forKey: "textFieldConter")
+        ///attackData = charapter.attackData
+        textFieldConter3 = defaults.integer(forKey: "textFieldConter")
+        ///textFieldConter3 = charapter.textFieldConter
         
         addVStackView()
         loadData()
@@ -45,15 +47,17 @@ class AttackVC: UIViewController, UITextFieldDelegate {
     
     override func viewWillDisappear(_:Bool) {
         defaults.set(attackData, forKey: "attackData")
-        defaults.set(textFieldConter, forKey: "textFieldConter")
+        ///charapter.attackData = attackData
+        defaults.set(textFieldConter3, forKey: "textFieldConter")
+        ///charapter.textFieldConter = textFieldConter3
     }
     
     
     
     
     func loadData() {
-        if textFieldConter != 0 {
-            for i in 1...textFieldConter {
+        if textFieldConter3 != 0 {
+            for i in 1...textFieldConter3 {
                 let textField = UITextField()
                 textField.placeholder = "Атаки, умения или способности."
                 textField.borderStyle = .roundedRect
@@ -111,7 +115,7 @@ class AttackVC: UIViewController, UITextFieldDelegate {
         } else {
             newField = false
             var checkAttackData = 0
-            for i in 1...textFieldConter {
+            for i in 1...textFieldConter3 {
                 checkAttackData += 1
                 if textField.text?.trimmingCharacters(in: .whitespaces) == attackData[i] {
                     checkAttackDataValue = checkAttackData
@@ -123,7 +127,7 @@ class AttackVC: UIViewController, UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         if newField == true {
             if textField.text?.trimmingCharacters(in: .whitespaces) != "" {
-                textFieldConter += 1
+                textFieldConter3 += 1
                 attackData.append((textField.text?.trimmingCharacters(in: .whitespaces))!)
                 addTextField()
                 UIView.animate(withDuration: 0.3) {
@@ -135,7 +139,7 @@ class AttackVC: UIViewController, UITextFieldDelegate {
                 attackData.remove(at: checkAttackDataValue!)
                 textField.removeFromSuperview()
                 vStackView.removeArrangedSubview(textField)
-                textFieldConter -= 1
+                textFieldConter3 -= 1
                 UIView.animate(withDuration: 0.3) {
                     self.vStackView.layoutIfNeeded()
                 }

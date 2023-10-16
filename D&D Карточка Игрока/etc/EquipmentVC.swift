@@ -18,7 +18,7 @@ class EquipmentVC: UIViewController, UITextFieldDelegate {
     
     var scrollView: UIScrollView!
     
-    var textFieldConter = 0
+    var textFieldConter1 = 0
     
     var newField: Bool?
     
@@ -31,7 +31,9 @@ class EquipmentVC: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         equipmentData = (defaults.array(forKey: "equipmentData") as? [String]) ?? ["1!lfds"]
-        textFieldConter = defaults.integer(forKey: "textFieldConterEquipment")
+        ///equipmentData = charapter.equipmentData
+        textFieldConter1 = defaults.integer(forKey: "textFieldConterEquipment")
+        ///textFieldConter1 = charapter.textFieldConterEquipment
         
         addVStackView()
         loadData()
@@ -45,15 +47,17 @@ class EquipmentVC: UIViewController, UITextFieldDelegate {
     
     override func viewWillDisappear(_:Bool) {
         defaults.set(equipmentData, forKey: "equipmentData")
-        defaults.set(textFieldConter, forKey: "textFieldConterEquipment")
+        ///charapter.equipmentData = equipmentData
+        defaults.set(textFieldConter1, forKey: "textFieldConterEquipment")
+        ///charapter.textFieldConterEquipment = textFieldConter1
     }
     
     
     
     
     func loadData() {
-        if textFieldConter != 0 {
-            for i in 1...textFieldConter {
+        if textFieldConter1 != 0 {
+            for i in 1...textFieldConter1 {
                 let textField = UITextField()
                 textField.placeholder = "Снаряжение."
                 textField.borderStyle = .roundedRect
@@ -111,7 +115,7 @@ class EquipmentVC: UIViewController, UITextFieldDelegate {
         } else {
             newField = false
             var checkEquipmentData = 0
-            for i in 1...textFieldConter {
+            for i in 1...textFieldConter1 {
                 checkEquipmentData += 1
                 if textField.text?.trimmingCharacters(in: .whitespaces) == equipmentData[i] {
                     checkEquipmentDataValue = checkEquipmentData
@@ -123,7 +127,7 @@ class EquipmentVC: UIViewController, UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         if newField == true {
             if textField.text?.trimmingCharacters(in: .whitespaces) != "" {
-                textFieldConter += 1
+                textFieldConter1 += 1
                 equipmentData.append((textField.text?.trimmingCharacters(in: .whitespaces))!)
                 addTextField()
                 UIView.animate(withDuration: 0.3) {
@@ -135,7 +139,7 @@ class EquipmentVC: UIViewController, UITextFieldDelegate {
                 equipmentData.remove(at: checkEquipmentDataValue!)
                 textField.removeFromSuperview()
                 vStackView.removeArrangedSubview(textField)
-                textFieldConter -= 1
+                textFieldConter1 -= 1
                 UIView.animate(withDuration: 0.3) {
                     self.vStackView.layoutIfNeeded()
                 }

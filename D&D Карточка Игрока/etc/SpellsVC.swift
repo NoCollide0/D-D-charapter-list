@@ -18,7 +18,7 @@ class SpellsVC: UIViewController, UITextFieldDelegate {
     
     var scrollView: UIScrollView!
     
-    var textFieldConter = 0
+    var textFieldConter2 = 0
     
     var newField: Bool?
     
@@ -31,7 +31,9 @@ class SpellsVC: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         spellsData = (defaults.array(forKey: "spellsData") as? [String]) ?? ["1!lfds"]
-        textFieldConter = defaults.integer(forKey: "textFieldConterSpells")
+        ///spellsData = charapter.spellsData
+        textFieldConter2 = defaults.integer(forKey: "textFieldConterSpells")
+        ///textFieldConter2 = charapter.textFieldConterEquipment
         
         addVStackView()
         loadData()
@@ -45,15 +47,17 @@ class SpellsVC: UIViewController, UITextFieldDelegate {
     
     override func viewWillDisappear(_:Bool) {
         defaults.set(spellsData, forKey: "spellsData")
-        defaults.set(textFieldConter, forKey: "textFieldConterSpells")
+        ///charapter.spellsData = spellsData
+        defaults.set(textFieldConter2, forKey: "textFieldConterSpells")
+        ///charapter.textFieldConterEquipment = textFieldConter2
     }
     
     
     
     
     func loadData() {
-        if textFieldConter != 0 {
-            for i in 1...textFieldConter {
+        if textFieldConter2 != 0 {
+            for i in 1...textFieldConter2 {
                 let textField = UITextField()
                 textField.placeholder = "Заклинания."
                 textField.borderStyle = .roundedRect
@@ -111,7 +115,7 @@ class SpellsVC: UIViewController, UITextFieldDelegate {
         } else {
             newField = false
             var checkSpellsData = 0
-            for i in 1...textFieldConter {
+            for i in 1...textFieldConter2 {
                 checkSpellsData += 1
                 if textField.text?.trimmingCharacters(in: .whitespaces) == spellsData[i] {
                     checkSpellsDataValue = checkSpellsData
@@ -123,7 +127,7 @@ class SpellsVC: UIViewController, UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         if newField == true {
             if textField.text?.trimmingCharacters(in: .whitespaces) != "" {
-                textFieldConter += 1
+                textFieldConter2 += 1
                 spellsData.append((textField.text?.trimmingCharacters(in: .whitespaces))!)
                 addTextField()
                 UIView.animate(withDuration: 0.3) {
@@ -135,7 +139,7 @@ class SpellsVC: UIViewController, UITextFieldDelegate {
                 spellsData.remove(at: checkSpellsDataValue!)
                 textField.removeFromSuperview()
                 vStackView.removeArrangedSubview(textField)
-                textFieldConter -= 1
+                textFieldConter2 -= 1
                 UIView.animate(withDuration: 0.3) {
                     self.vStackView.layoutIfNeeded()
                 }

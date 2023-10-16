@@ -27,6 +27,7 @@
 		7B9E86412A9E3C7100A5CCD3 /* AttackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E86402A9E3C7100A5CCD3 /* AttackVC.swift */; };
 		7BBF4FAC2A4073F5009CA261 /* ConstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBF4FAB2A4073F5009CA261 /* ConstVC.swift */; };
 		7BBF4FAE2A407E23009CA261 /* IntellectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBF4FAD2A407E23009CA261 /* IntellectVC.swift */; };
+		7BC081EF2ACB418E00AB5B03 /* CharapterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC081EE2ACB418E00AB5B03 /* CharapterData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		7B9E86402A9E3C7100A5CCD3 /* AttackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackVC.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		7BBF4FAB2A4073F5009CA261 /* ConstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstVC.swift; sourceTree = "<group>"; };
 		7BBF4FAD2A407E23009CA261 /* IntellectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntellectVC.swift; sourceTree = "<group>"; };
+		7BC081EE2ACB418E00AB5B03 /* CharapterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharapterData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,11 +90,12 @@
 				7B0341A32A28087C00DFF6FB /* AppDelegate.swift */,
 				7B0341A52A28087C00DFF6FB /* SceneDelegate.swift */,
 				7B0341B72A28096600DFF6FB /* MainScreenVC.swift */,
+				7BC081EE2ACB418E00AB5B03 /* CharapterData.swift */,
 				7B0341A92A28087C00DFF6FB /* Main.storyboard */,
 				7B0341AC2A28087E00DFF6FB /* Assets.xcassets */,
 				7B2FB71D2A45D0310047DBF5 /* HpVC.swift */,
-				7B9E863F2A9E3C2900A5CCD3 /* etc */,
 				7B8553AC2A2BB5A60081AA55 /* StatsDetail */,
+				7B9E863F2A9E3C2900A5CCD3 /* etc */,
 				7B0341AE2A28087E00DFF6FB /* LaunchScreen.storyboard */,
 				7B0341B12A28087E00DFF6FB /* Info.plist */,
 				7B98AFCA2A97C378003F0A33 /* lottie json */,
@@ -231,6 +234,7 @@
 				7B0341A42A28087C00DFF6FB /* AppDelegate.swift in Sources */,
 				7B3348792A39E522000CCD53 /* AgilityVC.swift in Sources */,
 				7B0341A62A28087C00DFF6FB /* SceneDelegate.swift in Sources */,
+				7BC081EF2ACB418E00AB5B03 /* CharapterData.swift in Sources */,
 				7BBF4FAC2A4073F5009CA261 /* ConstVC.swift in Sources */,
 				7B54F8E72ABDB865006B01A5 /* SpellsVC.swift in Sources */,
 			);

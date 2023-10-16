@@ -19,89 +19,90 @@ class IntellectVC: UIViewController {
     //Сохранение значения интеллекта после изменения и присвоение значения лейблу с переводом в инт и далее в стринг
     //А так же отправка значения интеллекта через notification
     @IBAction func IntellectChange(_ sender: UIStepper) {
-        defaults.set(String(Int(IntellectStepper.value)), forKey: "intellectValue")
+        ///defaults.set(String(Int(IntellectStepper.value)), forKey: "intellectValue")
+        charapter.intellectValue = String(Int(IntellectStepper.value))
         intellectLabel.text = String(Int(IntellectStepper.value))
                 
         //Бонус от интеллекта
         switch IntellectStepper.value {
         case 1:
             bonusIntellect.text = "-5"
-            defaults.set(bonusIntellect.text, forKey: "bonusIntellect")
+            charapter.bonusIntellect = bonusIntellect.text
             secondaryStatUpdate()
             break
         case 2...3:
             bonusIntellect.text = "-4"
-            defaults.set(bonusIntellect.text, forKey: "bonusIntellect")
+            charapter.bonusIntellect = bonusIntellect.text
             secondaryStatUpdate()
             break
         case 4...5:
             bonusIntellect.text = "-3"
-            defaults.set(bonusIntellect.text, forKey: "bonusIntellect")
+            charapter.bonusIntellect = bonusIntellect.text
             secondaryStatUpdate()
             break
         case 6...7:
             bonusIntellect.text = "-2"
-            defaults.set(bonusIntellect.text, forKey: "bonusIntellect")
+            charapter.bonusIntellect = bonusIntellect.text
             secondaryStatUpdate()
             break
         case 8...9:
             bonusIntellect.text = "-1"
-            defaults.set(bonusIntellect.text, forKey: "bonusIntellect")
+            charapter.bonusIntellect = bonusIntellect.text
             secondaryStatUpdate()
             break
         case 10...11:
             bonusIntellect.text = "0"
-            defaults.set(bonusIntellect.text, forKey: "bonusIntellect")
+            charapter.bonusIntellect = bonusIntellect.text
             secondaryStatUpdate()
             break
         case 12...13:
             bonusIntellect.text = "+1"
-            defaults.set(bonusIntellect.text, forKey: "bonusIntellect")
+            charapter.bonusIntellect = bonusIntellect.text
             secondaryStatUpdate()
             break
         case 14...15:
             bonusIntellect.text = "+2"
-            defaults.set(bonusIntellect.text, forKey: "bonusIntellect")
+            charapter.bonusIntellect = bonusIntellect.text
             secondaryStatUpdate()
             break
         case 16...17:
             bonusIntellect.text = "+3"
-            defaults.set(bonusIntellect.text, forKey: "bonusIntellect")
+            charapter.bonusIntellect = bonusIntellect.text
             secondaryStatUpdate()
             break
         case 18...19:
             bonusIntellect.text = "+4"
-            defaults.set(bonusIntellect.text, forKey: "bonusIntellect")
+            charapter.bonusIntellect = bonusIntellect.text
             secondaryStatUpdate()
             break
         case 20...21:
             bonusIntellect.text = "+5"
-            defaults.set(bonusIntellect.text, forKey: "bonusIntellect")
+            charapter.bonusIntellect = bonusIntellect.text
             secondaryStatUpdate()
             break
         case 22...23:
             bonusIntellect.text = "+6"
-            defaults.set(bonusIntellect.text, forKey: "bonusIntellect")
+            charapter.bonusIntellect = bonusIntellect.text
             secondaryStatUpdate()
             break
         case 24...25:
             bonusIntellect.text = "+7"
-            defaults.set(bonusIntellect.text, forKey: "bonusIntellect")
+            charapter.bonusIntellect = bonusIntellect.text
             secondaryStatUpdate()
             break
         case 26...27:
             bonusIntellect.text = "+8"
-            defaults.set(bonusIntellect.text, forKey: "bonusIntellect")
+            charapter.bonusIntellect = bonusIntellect.text
             secondaryStatUpdate()
             break
         case 28...29:
             bonusIntellect.text = "+9"
-            defaults.set(bonusIntellect.text, forKey: "bonusIntellect")
+            charapter.bonusIntellect = bonusIntellect.text
             secondaryStatUpdate()
             break
         case 30:
             bonusIntellect.text = "+10"
-            defaults.set(bonusIntellect.text, forKey: "bonusIntellect")
+            charapter.bonusIntellect = bonusIntellect.text
             secondaryStatUpdate()
             break
         default:
@@ -119,19 +120,25 @@ class IntellectVC: UIViewController {
     @IBAction func AnalyticSkillChange(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            defaults.set(AnalyticSkill.selectedSegmentIndex, forKey: "AnalyticSkill")
+            ///defaults.set(AnalyticSkill.selectedSegmentIndex, forKey: "AnalyticSkill")
+            charapter.analyticSkill = AnalyticSkill.selectedSegmentIndex
             analyticSkillValue = 0
-            defaults.set(analyticSkillValue, forKey: "analyticSkillValue")
+            ///defaults.set(analyticSkillValue, forKey: "analyticSkillValue")
+            charapter.analyticSkillValue = analyticSkillValue
             analyticUpdate()
         case 1:
-            defaults.set(AnalyticSkill.selectedSegmentIndex, forKey: "AnalyticSkill")
+            ///defaults.set(AnalyticSkill.selectedSegmentIndex, forKey: "AnalyticSkill")
+            charapter.analyticSkill = AnalyticSkill.selectedSegmentIndex
             analyticSkillValue = 2
-            defaults.set(analyticSkillValue, forKey: "analyticSkillValue")
+            ///defaults.set(analyticSkillValue, forKey: "analyticSkillValue")
+            charapter.analyticSkillValue = analyticSkillValue
             analyticUpdate()
         case 2:
-            defaults.set(AnalyticSkill.selectedSegmentIndex, forKey: "AnalyticSkill")
+            ///defaults.set(AnalyticSkill.selectedSegmentIndex, forKey: "AnalyticSkill")
+            charapter.analyticSkill = AnalyticSkill.selectedSegmentIndex
             analyticSkillValue = 4
-            defaults.set(analyticSkillValue, forKey: "analyticSkillValue")
+            ///defaults.set(analyticSkillValue, forKey: "analyticSkillValue")
+            charapter.analyticSkillValue = analyticSkillValue
             analyticUpdate()
         default:
             print("AnalyticSelectorError")
@@ -146,19 +153,25 @@ class IntellectVC: UIViewController {
     @IBAction func HistorySkillChange(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            defaults.set(HistorySkill.selectedSegmentIndex, forKey: "HistorySkill")
+            ///defaults.set(HistorySkill.selectedSegmentIndex, forKey: "HistorySkill")
+            charapter.historySkill = HistorySkill.selectedSegmentIndex
             historySkillValue = 0
-            defaults.set(historySkillValue, forKey: "historySkillValue")
+            ///defaults.set(historySkillValue, forKey: "historySkillValue")
+            charapter.historySkillValue = historySkillValue
             historyUpdate()
         case 1:
-            defaults.set(HistorySkill.selectedSegmentIndex, forKey: "HistorySkill")
+            ///defaults.set(HistorySkill.selectedSegmentIndex, forKey: "HistorySkill")
+            charapter.historySkill = HistorySkill.selectedSegmentIndex
             historySkillValue = 2
-            defaults.set(historySkillValue, forKey: "historySkillValue")
+            ///defaults.set(historySkillValue, forKey: "historySkillValue")
+            charapter.historySkillValue = historySkillValue
             historyUpdate()
         case 2:
-            defaults.set(HistorySkill.selectedSegmentIndex, forKey: "HistorySkill")
+            ///defaults.set(HistorySkill.selectedSegmentIndex, forKey: "HistorySkill")
+            charapter.historySkill = HistorySkill.selectedSegmentIndex
             historySkillValue = 4
-            defaults.set(historySkillValue, forKey: "historySkillValue")
+            ///defaults.set(historySkillValue, forKey: "historySkillValue")
+            charapter.historySkillValue = historySkillValue
             historyUpdate()
         default:
             print("HistorySelectorError")
@@ -173,19 +186,25 @@ class IntellectVC: UIViewController {
     @IBAction func MagicSkillChange(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            defaults.set(MagicSkill.selectedSegmentIndex, forKey: "MagicSkill")
+            ///defaults.set(MagicSkill.selectedSegmentIndex, forKey: "MagicSkill")
+            charapter.magicSkill = MagicSkill.selectedSegmentIndex
             magicSkillValue = 0
-            defaults.set(magicSkillValue, forKey: "magicSkillValue")
+            ///defaults.set(magicSkillValue, forKey: "magicSkillValue")
+            charapter.magicSkillValue = magicSkillValue
             magicUpdate()
         case 1:
-            defaults.set(MagicSkill.selectedSegmentIndex, forKey: "MagicSkill")
+            ///defaults.set(MagicSkill.selectedSegmentIndex, forKey: "MagicSkill")
+            charapter.magicSkill = MagicSkill.selectedSegmentIndex
             magicSkillValue = 2
-            defaults.set(magicSkillValue, forKey: "magicSkillValue")
+            ///defaults.set(magicSkillValue, forKey: "magicSkillValue")
+            charapter.magicSkillValue = magicSkillValue
             magicUpdate()
         case 2:
-            defaults.set(MagicSkill.selectedSegmentIndex, forKey: "MagicSkill")
+            ///defaults.set(MagicSkill.selectedSegmentIndex, forKey: "MagicSkill")
+            charapter.magicSkill = MagicSkill.selectedSegmentIndex
             magicSkillValue = 4
-            defaults.set(magicSkillValue, forKey: "magicSkillValue")
+            ///defaults.set(magicSkillValue, forKey: "magicSkillValue")
+            charapter.magicSkillValue = magicSkillValue
             magicUpdate()
         default:
             print("MagicSelectorError")
@@ -200,19 +219,25 @@ class IntellectVC: UIViewController {
     @IBAction func NatureSkillChange(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            defaults.set(NatureSkill.selectedSegmentIndex, forKey: "NatureSkill")
+            ///defaults.set(NatureSkill.selectedSegmentIndex, forKey: "NatureSkill")
+            charapter.natureSkill = NatureSkill.selectedSegmentIndex
             natureSkillValue = 0
-            defaults.set(natureSkillValue, forKey: "natureSkillValue")
+            ///defaults.set(natureSkillValue, forKey: "natureSkillValue")
+            charapter.natureSkillValue = natureSkillValue
             natureUpdate()
         case 1:
-            defaults.set(NatureSkill.selectedSegmentIndex, forKey: "NatureSkill")
+            ///defaults.set(NatureSkill.selectedSegmentIndex, forKey: "NatureSkill")
+            charapter.natureSkill = NatureSkill.selectedSegmentIndex
             natureSkillValue = 2
-            defaults.set(natureSkillValue, forKey: "natureSkillValue")
+            ///defaults.set(natureSkillValue, forKey: "natureSkillValue")
+            charapter.natureSkillValue = natureSkillValue
             natureUpdate()
         case 2:
-            defaults.set(NatureSkill.selectedSegmentIndex, forKey: "NatureSkill")
+            ///defaults.set(NatureSkill.selectedSegmentIndex, forKey: "NatureSkill")
+            charapter.natureSkill = NatureSkill.selectedSegmentIndex
             natureSkillValue = 4
-            defaults.set(natureSkillValue, forKey: "natureSkillValue")
+            ///defaults.set(natureSkillValue, forKey: "natureSkillValue")
+            charapter.natureSkillValue = natureSkillValue
             natureUpdate()
         default:
             print("NatureSelectorError")
@@ -227,19 +252,25 @@ class IntellectVC: UIViewController {
     @IBAction func ReligionSkillChange(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            defaults.set(ReligionSkill.selectedSegmentIndex, forKey: "ReligionSkill")
+            ///defaults.set(ReligionSkill.selectedSegmentIndex, forKey: "ReligionSkill")
+            charapter.religionSkill = ReligionSkill.selectedSegmentIndex
             religionSkillValue = 0
-            defaults.set(religionSkillValue, forKey: "religionSkillValue")
+            ///defaults.set(religionSkillValue, forKey: "religionSkillValue")
+            charapter.religionSkillValue = religionSkillValue
             religionUpdate()
         case 1:
-            defaults.set(ReligionSkill.selectedSegmentIndex, forKey: "ReligionSkill")
+            ///defaults.set(ReligionSkill.selectedSegmentIndex, forKey: "ReligionSkill")
+            charapter.religionSkill = ReligionSkill.selectedSegmentIndex
             religionSkillValue = 2
-            defaults.set(religionSkillValue, forKey: "religionSkillValue")
+            ///defaults.set(religionSkillValue, forKey: "religionSkillValue")
+            charapter.religionSkillValue = religionSkillValue
             religionUpdate()
         case 2:
-            defaults.set(ReligionSkill.selectedSegmentIndex, forKey: "ReligionSkill")
+            ///defaults.set(ReligionSkill.selectedSegmentIndex, forKey: "ReligionSkill")
+            charapter.religionSkill = ReligionSkill.selectedSegmentIndex
             religionSkillValue = 4
-            defaults.set(religionSkillValue, forKey: "religionSkillValue")
+            ///defaults.set(religionSkillValue, forKey: "religionSkillValue")
+            charapter.religionSkillValue = religionSkillValue
             religionUpdate()
         default:
             print("RelgionSelectorError")
@@ -253,43 +284,60 @@ class IntellectVC: UIViewController {
         super.viewDidLoad()
         
         //Загрузка бонуса интеллект
-        bonusIntellect.text = defaults.string(forKey: "bonusIntellect") ?? "0"
+        ///bonusIntellect.text = defaults.string(forKey: "bonusIntellect") ?? "0"
+        bonusIntellect.text = charapter.bonusIntellect
         
         //Загрузка значения интеллект в степпер и в лейбл при загрузке экрана
-        IntellectStepper.value = Double(defaults.string(forKey: "intellectValue") ?? "10")!
+        ///IntellectStepper.value = Double(defaults.string(forKey: "intellectValue") ?? "10")!
+        IntellectStepper.value = Double(charapter.intellectValue!)!
         intellectLabel.text = String(Int(IntellectStepper.value))
         
         //Загрузки подстатов
             //Анализ
                 //Загрузка селектора мастерства
-        AnalyticSkill.selectedSegmentIndex = defaults.integer(forKey: "AnalyticSkill")
+        ///AnalyticSkill.selectedSegmentIndex = defaults.integer(forKey: "AnalyticSkill")
+        AnalyticSkill.selectedSegmentIndex = charapter.analyticSkill
                 //Загрузка общего бонуса
-        AnalyticBonus.text = defaults.string(forKey: "AnalyticBonus.text") ?? "0"
-        analyticSkillValue = defaults.integer(forKey: "analyticSkillValue")
+        ///AnalyticBonus.text = defaults.string(forKey: "AnalyticBonus.text") ?? "0"
+        AnalyticBonus.text = charapter.analyticBonusText
+        ///analyticSkillValue = defaults.integer(forKey: "analyticSkillValue")
+        analyticSkillValue = charapter.analyticSkillValue
             //История
                 //Загрузка селектора мастерства
-        HistorySkill.selectedSegmentIndex = defaults.integer(forKey: "HistorySkill")
+        ///HistorySkill.selectedSegmentIndex = defaults.integer(forKey: "HistorySkill")
+        HistorySkill.selectedSegmentIndex = charapter.historySkill
                 //Загрузка общего бонуса
-        HistoryBonus.text = defaults.string(forKey: "HistoryBonus.text") ?? "0"
-        historySkillValue = defaults.integer(forKey: "historySkillValue")
+        ///HistoryBonus.text = defaults.string(forKey: "HistoryBonus.text") ?? "0"
+        HistoryBonus.text = charapter.historyBonusText
+        ///historySkillValue = defaults.integer(forKey: "historySkillValue")
+        historySkillValue = charapter.historySkillValue
             //Магия
                 //Загрузка селектора мастерства
-        MagicSkill.selectedSegmentIndex = defaults.integer(forKey: "MagicSkill")
+        ///MagicSkill.selectedSegmentIndex = defaults.integer(forKey: "MagicSkill")
+        MagicSkill.selectedSegmentIndex = charapter.magicSkill
                 //Загрузка общего бонуса
-        MagicBonus.text = defaults.string(forKey: "MagicBonus.text") ?? "0"
-        magicSkillValue = defaults.integer(forKey: "magicSkillValue")
+        ///MagicBonus.text = defaults.string(forKey: "MagicBonus.text") ?? "0"
+        MagicBonus.text = charapter.magicBonusText
+        ///magicSkillValue = defaults.integer(forKey: "magicSkillValue")
+        magicSkillValue = charapter.magicSkillValue
             //Природа
                 //Загрузка селектора мастерства
-        NatureSkill.selectedSegmentIndex = defaults.integer(forKey: "NatureSkill")
+        ///NatureSkill.selectedSegmentIndex = defaults.integer(forKey: "NatureSkill")
+        NatureSkill.selectedSegmentIndex = charapter.natureSkill
                 //Загрузка общего бонуса
-        NatureBonus.text = defaults.string(forKey: "NatureBonus.text") ?? "0"
-        natureSkillValue = defaults.integer(forKey: "natureSkillValue")
+        ///NatureBonus.text = defaults.string(forKey: "NatureBonus.text") ?? "0"
+        NatureBonus.text = charapter.natureBonusText
+        ///natureSkillValue = defaults.integer(forKey: "natureSkillValue")
+        natureSkillValue = charapter.natureSkillValue
             //Религия
                 //Загрузка селектора мастерства
-        ReligionSkill.selectedSegmentIndex = defaults.integer(forKey: "ReligionSkill")
+        ///ReligionSkill.selectedSegmentIndex = defaults.integer(forKey: "ReligionSkill")
+        ReligionSkill.selectedSegmentIndex = charapter.religionSkill
                 //Загрузка общего бонуса
-        ReligionBonus.text = defaults.string(forKey: "ReligionBonus.text") ?? "0"
-        religionSkillValue = defaults.integer(forKey: "religionSkillValue")
+        ///ReligionBonus.text = defaults.string(forKey: "ReligionBonus.text") ?? "0"
+        ReligionBonus.text = charapter.religionBonusText
+        ///religionSkillValue = defaults.integer(forKey: "religionSkillValue")
+        religionSkillValue = charapter.religionSkillValue
         
         // Do any additional setup after loading the view.
     }
@@ -298,27 +346,32 @@ class IntellectVC: UIViewController {
         //Анализ
     func analyticUpdate() {
         AnalyticBonus.text = "\(Int(bonusIntellect.text!)! + analyticSkillValue)"
-        defaults.set(AnalyticBonus.text, forKey: "AnalyticBonus.text")
+        ///defaults.set(AnalyticBonus.text, forKey: "AnalyticBonus.text")
+        charapter.analyticBonusText = AnalyticBonus.text!
     }
         //История
     func historyUpdate() {
         HistoryBonus.text = "\(Int(bonusIntellect.text!)! + historySkillValue)"
-        defaults.set(HistoryBonus.text, forKey: "HistoryBonus.text")
+        ///defaults.set(HistoryBonus.text, forKey: "HistoryBonus.text")
+        charapter.historyBonusText = HistoryBonus.text!
     }
         //Магия
     func magicUpdate() {
         MagicBonus.text = "\(Int(bonusIntellect.text!)! + magicSkillValue)"
-        defaults.set(MagicBonus.text, forKey: "MagicBonus.text")
+        ///defaults.set(MagicBonus.text, forKey: "MagicBonus.text")
+        charapter.magicBonusText = MagicBonus.text!
     }
         //Природа
     func natureUpdate() {
         NatureBonus.text = "\(Int(bonusIntellect.text!)! + natureSkillValue)"
-        defaults.set(NatureBonus.text, forKey: "MagicBonus.text")
+        ///defaults.set(NatureBonus.text, forKey: "NatureBonus.text")
+        charapter.natureBonusText = NatureBonus.text!
     }
         //Религия
     func religionUpdate() {
         ReligionBonus.text = "\(Int(bonusIntellect.text!)! + religionSkillValue)"
-        defaults.set(ReligionBonus.text, forKey: "ReligionBonus.text")
+        ///defaults.set(ReligionBonus.text, forKey: "ReligionBonus.text")
+        charapter.religionBonusText = ReligionBonus.text!
     }
 
 
