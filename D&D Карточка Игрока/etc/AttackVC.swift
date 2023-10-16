@@ -40,10 +40,14 @@ class AttackVC: UIViewController, UITextFieldDelegate {
 
     }
     
+    
+    
+    
     override func viewWillDisappear(_:Bool) {
         defaults.set(attackData, forKey: "attackData")
         defaults.set(textFieldConter, forKey: "textFieldConter")
     }
+    
     
     
     
@@ -75,7 +79,6 @@ class AttackVC: UIViewController, UITextFieldDelegate {
         textField.delegate = self
         vStackView.insertArrangedSubview(textField, at: 0)
     }
-    
     
     func addVStackView() {
         scrollView = UIScrollView()
@@ -141,6 +144,7 @@ class AttackVC: UIViewController, UITextFieldDelegate {
             }
         }
     }
+   
     
     
     

@@ -40,10 +40,14 @@ class SpellsVC: UIViewController, UITextFieldDelegate {
 
     }
     
+    
+    
+    
     override func viewWillDisappear(_:Bool) {
         defaults.set(spellsData, forKey: "spellsData")
         defaults.set(textFieldConter, forKey: "textFieldConterSpells")
     }
+    
     
     
     
@@ -75,7 +79,6 @@ class SpellsVC: UIViewController, UITextFieldDelegate {
         textField.delegate = self
         vStackView.insertArrangedSubview(textField, at: 0)
     }
-    
     
     func addVStackView() {
         scrollView = UIScrollView()
@@ -141,6 +144,7 @@ class SpellsVC: UIViewController, UITextFieldDelegate {
             }
         }
     }
+    
     
     
     

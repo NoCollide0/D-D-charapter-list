@@ -1,7 +1,7 @@
 //
 //  MainScreenVC.swift
 //  D&D Карточка Игрока
-//  1
+//
 //  Created by Федор Шашков on 01.06.2023.
 //
 
@@ -218,6 +218,29 @@ class MainScreenVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate,
         charapterClass.delegate = self
         charapterRace.delegate = self
         
+        //Загрузки UserDefaults
+        userDefaultsMainLoad()
+        
+        //Установка observer для регистрации получения notification из другого View Controller
+        observerSetup()
+        
+        //Анимация ХП бара
+        animationSet()
+        
+        //Настройки вида элементов на экране
+        viewsFormSetup()
+        
+        //Убрать клавиатуру при тапе в любом месте экрана
+        let keyboardDissmiss = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(keyboardDissmiss)
+        
+    }
+    
+    
+    
+    
+    //Общая функция загрузки из UserDefaults
+    func userDefaultsMainLoad(){
         //Присваиваем значени по умолчанию
         let defaultValues: [String: Any] = ["endAnimationPoint": 0.5, "greenValue": 0, "redValue": 0, "initiative": 30, "speed": 0, "armorClass": 0]
         UserDefaults.standard.register(defaults: defaultValues)
@@ -238,17 +261,27 @@ class MainScreenVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate,
             wisdomValue.text = defaults.string(forKey: "wisdomValue") ?? "10"
         bonusCharisma.text = defaults.string(forKey: "bonusCharisma") ?? "0"
         charismaValue.text = defaults.string(forKey: "charismaValue") ?? "10"
-        
+            endAnimationPoint = defaults.double(forKey: "endAnimationPoint")
         initiative = defaults.integer(forKey: "initiative")
         speed = defaults.integer(forKey: "speed")
         armorClass = defaults.integer(forKey: "armorClass")
             initiativeLabel.text = "\(initiativeArray[initiative])"
             speedLabel.text = "\(speedArray[speed])"
             armorClassLabel.text = "\(armorClassArray[armorClass])"
-        
         hpValue.text = "Макс ХП: \(defaults.string(forKey: "maxHpLabel") ?? "10")"
         hpDice.text = "Кость ХП: \(defaults.string(forKey: "hpDiceLabel") ?? "D4-D12")"
+            //Спасбросок загрузка
+        greenValue = defaults.integer(forKey: "greenValue")
+        redValue = defaults.integer(forKey: "redValue")
+            greenAnimationSetLoad()
+            redAnimationSetLoad()
         
+    }
+    
+    
+    
+    
+    func observerSetup(){
         //Установка observer для регистрации получения notification из другого View Controller
         NotificationCenter.default.addObserver(self, selector: #selector(changeSilaValue(notification:)), name: MainScreenVC.deliverySilaValue, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(changeAgilityValue(notification:)), name: MainScreenVC.deliveryAgilityValue, object: nil)
@@ -257,11 +290,12 @@ class MainScreenVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate,
         NotificationCenter.default.addObserver(self, selector: #selector(changeWisdomValue(notification:)), name: MainScreenVC.deliveryWisdomValue, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(changeCharismaValue(notification:)), name: MainScreenVC.deliveryCharismaValue, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(changeHpValue(notification:)), name: MainScreenVC.deliveryHpValue, object: nil)
-
-        //Анимация ХП бара
-        endAnimationPoint = defaults.double(forKey: "endAnimationPoint") 
-        animationSet()
-        
+    }
+    
+    
+    
+    
+    func viewsFormSetup(){
         //Скругление углов views
         viewsCorner = [view1, view2, view3, view4, view5, view6, view7, view8, view9]
         for view in viewsCorner {
@@ -290,25 +324,20 @@ class MainScreenVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate,
             view.layer.cornerRadius = view.frame.size.width / 2
             view.contentMode = .scaleToFill
         }
-        
-        //Спасбросок загрузка
-        greenValue = defaults.integer(forKey: "greenValue")
-        redValue = defaults.integer(forKey: "redValue")
-        greenAnimationSetLoad()
-        redAnimationSetLoad()
-        
-        //Убрать клавиатуру при тапе в любом месте экрана
-        let keyboardDissmiss = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
-        view.addGestureRecognizer(keyboardDissmiss)
-        
-        // Do any additional setup after loading the view.
+
     }
+    
+    
+    
     
     //Закрывает клавиатуру при нажатии на кнопку "готово"
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
+    
+    
+    
     
     //Функция анимации ХП бара
     func animationSet(){
@@ -317,6 +346,9 @@ class MainScreenVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate,
         HpBarAnimationView.play(fromProgress: startAnimationPoint, toProgress: endAnimationPoint)
         defaults.set(endAnimationPoint, forKey: "endAnimationPoint")
     }
+    
+    
+    
     
     //Функция спасброска
     func greenAnimationSet() {
@@ -538,19 +570,6 @@ class MainScreenVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate,
     @IBAction func spellsButtonTapped(_ sender: Any) {
         performSegue(withIdentifier: "toSpellsVC", sender: nil)
     }
-    
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
 }
 

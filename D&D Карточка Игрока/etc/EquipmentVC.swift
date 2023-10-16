@@ -40,10 +40,14 @@ class EquipmentVC: UIViewController, UITextFieldDelegate {
 
     }
     
+    
+    
+    
     override func viewWillDisappear(_:Bool) {
         defaults.set(equipmentData, forKey: "equipmentData")
         defaults.set(textFieldConter, forKey: "textFieldConterEquipment")
     }
+    
     
     
     
@@ -75,7 +79,6 @@ class EquipmentVC: UIViewController, UITextFieldDelegate {
         textField.delegate = self
         vStackView.insertArrangedSubview(textField, at: 0)
     }
-    
     
     func addVStackView() {
         scrollView = UIScrollView()
@@ -141,6 +144,7 @@ class EquipmentVC: UIViewController, UITextFieldDelegate {
             }
         }
     }
+    
     
     
     

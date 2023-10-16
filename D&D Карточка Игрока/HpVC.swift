@@ -146,6 +146,8 @@ class HpVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     
+    
+    
     //Функция анимации слайдера
     func animateSliderPosition(to value: Float) {
         UIView.animate(withDuration: 0.3) {
@@ -153,6 +155,8 @@ class HpVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
             self.view.layoutIfNeeded()
         }
     }
+    
+    
     
     
     //Настройки UiPicker, кол-во компонентов, элементов компонентов и заполнение элементов данными
