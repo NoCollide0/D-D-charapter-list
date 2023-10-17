@@ -24,17 +24,14 @@ class MainScreenVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate,
     //Сохраниние Имени Класса и Рассы после изменения полей
     @IBAction func endEditingCharName(_ sender: Any) {
         charapterNameMain = charapterName.text!.trimmingCharacters(in: .whitespaces)
-        //defaults.set(charapterNameMain, forKey: "charapterName")
         charapter.charapterName = charapterNameMain
     }
     @IBAction func endEditingCharRace(_ sender: Any) {
         charapterRaceMain = charapterRace.text!.trimmingCharacters(in: .whitespaces)
-        //defaults.set(charapterRaceMain, forKey: "charapterRace")
         charapter.charapterRace = charapterRaceMain
     }
     @IBAction func endEditingCharClass(_ sender: Any) {
         charapterClassMain = charapterClass.text!.trimmingCharacters(in: .whitespaces)
-        //defaults.set(charapterClassMain, forKey: "charapterClass")
         charapter.charapterClass = charapterClassMain
     }
     
@@ -257,56 +254,33 @@ class MainScreenVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate,
         UserDefaults.standard.register(defaults: defaultValues)
         
         //загрузки из UserDefaults
-        ///charapterName.text? = defaults.string(forKey: "charapterName") ?? "Имя персонажа"
         charapterName.text = charapter.charapterName
-        ///charapterRace.text? = defaults.string(forKey: "charapterRace") ?? "Раса"
         charapterRace.text = charapter.charapterRace
-        ///charapterClass.text? = defaults.string(forKey: "charapterClass") ?? "Класс"
         charapterClass.text = charapter.charapterClass
-        ///bonusSila.text = defaults.string(forKey: "bonusSila") ?? "0"
         bonusSila.text = charapter.bonusSila
-        ///silaValue.text = defaults.string(forKey: "silaValue") ?? "10"
         silaValue.text = charapter.silaValue
-        ///bonusAgility.text = defaults.string(forKey: "bonusAgility") ?? "0"
         bonusAgility.text = charapter.bonusAgility
-        ///agilityValue.text = defaults.string(forKey: "agilityValue") ?? "10"
         agilityValue.text = charapter.agilityValue
-        ///bonusConst.text = defaults.string(forKey: "bonusConst") ?? "0"
         bonusConst.text = charapter.bonusConst
-        ///constValue.text = defaults.string(forKey: "constValue") ?? "10"
         constValue.text = charapter.constValue
-        ///bonusIntellect.text = defaults.string(forKey: "bonusIntellect") ?? "0"
         bonusIntellect.text = charapter.bonusIntellect
-        ///intellectValue.text = defaults.string(forKey: "intellectValue") ?? "10"
         intellectValue.text = charapter.intellectValue
-        ///bonusWisdom.text = defaults.string(forKey: "bonusWisdom") ?? "0"
         bonusWisdom.text = charapter.bonusWisdom
-        ///wisdomValue.text = defaults.string(forKey: "wisdomValue") ?? "10"
         wisdomValue.text = charapter.wisdomValue
-        ///bonusCharisma.text = defaults.string(forKey: "bonusCharisma") ?? "0"
         bonusCharisma.text = charapter.bonusCharisma
-        ///charismaValue.text = defaults.string(forKey: "charismaValue") ?? "10"
         charismaValue.text = charapter.charismaValue
-        ///endAnimationPoint = defaults.double(forKey: "endAnimationPoint")
         endAnimationPoint = charapter.endAnimationPoint
-        ///initiative = defaults.integer(forKey: "initiative")
         initiative = charapter.initiative
-        ///speed = defaults.integer(forKey: "speed")
         speed = charapter.speed
-        ///armorClass = defaults.integer(forKey: "armorClass")
         armorClass = charapter.armorClass
         initiativeLabel.text = "\(initiativeArray[initiative])"
         speedLabel.text = "\(speedArray[speed])"
         armorClassLabel.text = "\(armorClassArray[armorClass])"
         
-        ///hpValue.text = "Макс ХП: \(defaults.string(forKey: "maxHpLabel") ?? "10")"
         hpValue.text = "Макс ХП: \(charapter.maxHpLabel)"
-        ///hpDice.text = "Кость ХП: \(defaults.string(forKey: "hpDiceLabel") ?? "D4-D12")"
         hpDice.text = "Кость ХП: \(charapter.hpDiceLabel)"
             //Спасбросок загрузка
-        ///greenValue = defaults.integer(forKey: "greenValue")
         greenValue = charapter.greenValue
-        ///redValue = defaults.integer(forKey: "redValue")
         redValue = charapter.redValue
             greenAnimationSetLoad()
             redAnimationSetLoad()
@@ -379,7 +353,6 @@ class MainScreenVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate,
         HpBarAnimationView.contentMode = .scaleToFill
         HpBarAnimationView.animationSpeed = 4
         HpBarAnimationView.play(fromProgress: startAnimationPoint, toProgress: endAnimationPoint)
-        ///defaults.set(endAnimationPoint, forKey: "endAnimationPoint")
         charapter.endAnimationPoint = endAnimationPoint
     }
     
@@ -391,27 +364,23 @@ class MainScreenVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate,
         if greenValue == 0 {
             greenAnimationView1.play(toProgress: 1)
             greenValue = 1
-            ///defaults.set(greenValue, forKey: "greenValue")
             charapter.greenValue = greenValue!
         } else if greenValue == 1 {
             greenAnimationView1.play(toProgress: 1)
             greenAnimationView2.play(toProgress: 1)
             greenValue = 2
-            ///defaults.set(greenValue, forKey: "greenValue")
             charapter.greenValue = greenValue!
         } else if greenValue == 2 {
             greenAnimationView1.play(toProgress: 1)
             greenAnimationView2.play(toProgress: 1)
             greenAnimationView3.play(toProgress: 1)
             greenValue = 3
-            ///defaults.set(greenValue, forKey: "greenValue")
             charapter.greenValue = greenValue!
         } else if greenValue == 3 {
             greenAnimationView1.play(fromProgress:1, toProgress: 0)
             greenAnimationView2.play(fromProgress:1, toProgress: 0)
             greenAnimationView3.play(fromProgress:1, toProgress: 0)
             greenValue = 0
-            ///defaults.set(greenValue, forKey: "greenValue")
             charapter.greenValue = greenValue!
         }
     }
@@ -419,27 +388,23 @@ class MainScreenVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate,
         if redValue == 0 {
             redAnimationView1.play(toProgress: 1)
             redValue = 1
-            ///defaults.set(redValue, forKey: "redValue")
             charapter.redValue = redValue!
         } else if redValue == 1 {
             redAnimationView1.play(toProgress: 1)
             redAnimationView2.play(toProgress: 1)
             redValue = 2
-            ///defaults.set(redValue, forKey: "redValue")
             charapter.redValue = redValue!
         } else if redValue == 2 {
             redAnimationView1.play(toProgress: 1)
             redAnimationView2.play(toProgress: 1)
             redAnimationView3.play(toProgress: 1)
             redValue = 3
-            ///defaults.set(redValue, forKey: "redValue")
             charapter.redValue = redValue!
         } else if redValue == 3 {
             redAnimationView1.play(fromProgress:1, toProgress: 0)
             redAnimationView2.play(fromProgress:1, toProgress: 0)
             redAnimationView3.play(fromProgress:1, toProgress: 0)
             redValue = 0
-            ///defaults.set(redValue, forKey: "redValue")
             charapter.redValue = redValue!
         }
     }
@@ -510,17 +475,14 @@ class MainScreenVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate,
             
             if self.buttonPressedCheck == "initiative" {
                 self.initiative = pickerView.selectedRow(inComponent: 0)
-                ///self.defaults.set(self.initiative, forKey: "initiative")
                 charapter.initiative = self.initiative
                 self.initiativeLabel.text = "\(self.initiativeArray[self.initiative])"
             } else if self.buttonPressedCheck == "speed" {
                 self.speed = pickerView.selectedRow(inComponent: 0)
-                ///self.defaults.set(self.speed, forKey: "speed")
                 charapter.speed = self.speed
                 self.speedLabel.text = "\(self.speedArray[self.speed])"
             } else if self.buttonPressedCheck == "armorClass" {
                 self.armorClass = pickerView.selectedRow(inComponent: 0)
-                ///self.defaults.set(self.armorClass, forKey: "armorClass")
                 charapter.armorClass = self.armorClass
                 self.armorClassLabel.text = "\(self.armorClassArray[self.armorClass])"
             }

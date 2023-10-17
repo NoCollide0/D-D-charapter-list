@@ -19,7 +19,6 @@ class CharismaVC: UIViewController {
     //Сохранение значения харизмы после изменения и присвоение значения лейблу с переводом в инт и далее в стринг
     //А так же отправка значения харизмы через notification
     @IBAction func CharismaChange(_ sender: UIStepper) {
-        ///defaults.set(String(Int(CharismaStepper.value)), forKey: "charismaValue")
         charapter.charismaValue = String(Int(CharismaStepper.value))
         charismaLabel.text = String(Int(CharismaStepper.value))
                 
@@ -120,24 +119,18 @@ class CharismaVC: UIViewController {
     @IBAction func PerformanceSkillChange(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            ///defaults.set(PerformanceSkill.selectedSegmentIndex, forKey: "PerformanceSkill")
             charapter.performanceSkill = PerformanceSkill.selectedSegmentIndex
             performanceSkillValue = 0
-            ///defaults.set(performanceSkillValue, forKey: "performanceSkillValue")
             charapter.performanceSkillValue = performanceSkillValue
             performanceUpdate()
         case 1:
-            ///defaults.set(PerformanceSkill.selectedSegmentIndex, forKey: "PerformanceSkill")
             charapter.performanceSkill = PerformanceSkill.selectedSegmentIndex
             performanceSkillValue = 2
-            ///defaults.set(performanceSkillValue, forKey: "performanceSkillValue")
             charapter.performanceSkillValue = performanceSkillValue
             performanceUpdate()
         case 2:
-            ///defaults.set(PerformanceSkill.selectedSegmentIndex, forKey: "PerformanceSkill")
             charapter.performanceSkill = PerformanceSkill.selectedSegmentIndex
             performanceSkillValue = 4
-            ///defaults.set(performanceSkillValue, forKey: "performanceSkillValue")
             charapter.performanceSkillValue = performanceSkillValue
             performanceUpdate()
         default:
@@ -153,24 +146,18 @@ class CharismaVC: UIViewController {
     @IBAction func IntimidationSkillChange(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            ///defaults.set(IntimidationSkill.selectedSegmentIndex, forKey: "IntimidationSkill")
             charapter.intimidationSkill = IntimidationSkill.selectedSegmentIndex
             intimidationSkillValue = 0
-            ///defaults.set(intimidationSkillValue, forKey: "intimidationSkillValue")
             charapter.intimidationSkillValue = intimidationSkillValue
             intimidationUpdate()
         case 1:
-            ///defaults.set(IntimidationSkill.selectedSegmentIndex, forKey: "IntimidationSkill")
             charapter.intimidationSkill = IntimidationSkill.selectedSegmentIndex
             intimidationSkillValue = 2
-            ///defaults.set(intimidationSkillValue, forKey: "intimidationSkillValue")
             charapter.intimidationSkillValue = intimidationSkillValue
             intimidationUpdate()
         case 2:
-            ///defaults.set(IntimidationSkill.selectedSegmentIndex, forKey: "IntimidationSkill")
             charapter.intimidationSkill = IntimidationSkill.selectedSegmentIndex
             intimidationSkillValue = 4
-            ///defaults.set(intimidationSkillValue, forKey: "intimidationSkillValue")
             charapter.intimidationSkillValue = intimidationSkillValue
             intimidationUpdate()
         default:
@@ -186,24 +173,18 @@ class CharismaVC: UIViewController {
     @IBAction func LieSkillChange(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            ///defaults.set(LieSkill.selectedSegmentIndex, forKey: "LieSkill")
             charapter.lieSkill = LieSkill.selectedSegmentIndex
             lieSkillValue = 0
-            ///defaults.set(lieSkillValue, forKey: "lieSkillValue")
             charapter.lieSkillValue = lieSkillValue
             lieUpdate()
         case 1:
-            ///defaults.set(LieSkill.selectedSegmentIndex, forKey: "LieSkill")
             charapter.lieSkill = LieSkill.selectedSegmentIndex
             lieSkillValue = 2
-            ///defaults.set(lieSkillValue, forKey: "lieSkillValue")
             charapter.lieSkillValue = lieSkillValue
             lieUpdate()
         case 2:
-            ///defaults.set(LieSkill.selectedSegmentIndex, forKey: "LieSkill")
             charapter.lieSkill = LieSkill.selectedSegmentIndex
             lieSkillValue = 4
-            ///defaults.set(lieSkillValue, forKey: "lieSkillValue")
             charapter.lieSkillValue = lieSkillValue
             lieUpdate()
         default:
@@ -219,24 +200,18 @@ class CharismaVC: UIViewController {
     @IBAction func BeliefSkillChange(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            ///defaults.set(BeliefSkill.selectedSegmentIndex, forKey: "BeliefSkill")
             charapter.beliefSkill = BeliefSkill.selectedSegmentIndex
             beliefSkillValue = 0
-            ///defaults.set(beliefSkillValue, forKey: "beliefSkillValue")
             charapter.beliefSkillValue = beliefSkillValue
             beliefUpdate()
         case 1:
-            ///defaults.set(BeliefSkill.selectedSegmentIndex, forKey: "BeliefSkill")
             charapter.beliefSkill = BeliefSkill.selectedSegmentIndex
             beliefSkillValue = 2
-            ///defaults.set(beliefSkillValue, forKey: "beliefSkillValue")
             charapter.beliefSkillValue = beliefSkillValue
             beliefUpdate()
         case 2:
-            ///defaults.set(BeliefSkill.selectedSegmentIndex, forKey: "BeliefSkill")
             charapter.beliefSkill = BeliefSkill.selectedSegmentIndex
             beliefSkillValue = 4
-            ///defaults.set(beliefSkillValue, forKey: "beliefSkillValue")
             charapter.beliefSkillValue = beliefSkillValue
             beliefUpdate()
         default:
@@ -251,11 +226,9 @@ class CharismaVC: UIViewController {
         super.viewDidLoad()
         
         //Загрузка бонуса харизмы
-        ///bonusCharisma.text = defaults.string(forKey: "bonusCharisma") ?? "0"
         bonusCharisma.text = charapter.bonusCharisma
         
         //Загрузка значения харизмы в степпер и в лейбл при загрузке экрана
-        ///CharismaStepper.value = Double(defaults.string(forKey: "charismaValue") ?? "10")!
         CharismaStepper.value = Double(charapter.charismaValue!)!
         charismaLabel.text = String(Int(CharismaStepper.value))
         
@@ -263,67 +236,50 @@ class CharismaVC: UIViewController {
         //Загрузки подстатов
             //Выступление
                 //Загрузка селектора мастерства
-        ///PerformanceSkill.selectedSegmentIndex = defaults.integer(forKey: "PerformanceSkill")
         PerformanceSkill.selectedSegmentIndex = charapter.performanceSkill
                 //Загрузка общего бонуса
-        ///PerformanceBonus.text = defaults.string(forKey: "PerformanceBonus.text") ?? "0"
         PerformanceBonus.text = charapter.performanceBonusText
-        ///performanceSkillValue = defaults.integer(forKey: "performanceSkillValue")
         performanceSkillValue = charapter.performanceSkillValue
             //Запугивание
                 //Загрузка селектора мастерства
-        ///IntimidationSkill.selectedSegmentIndex = defaults.integer(forKey: "IntimidationSkill")
         IntimidationSkill.selectedSegmentIndex = charapter.intimidationSkill
                 //Загрузка общего бонуса
-        ///IntimidationBonus.text = defaults.string(forKey: "IntimidationBonus.text") ?? "0"
         IntimidationBonus.text = charapter.intimidationBonusText
-        ///intimidationSkillValue = defaults.integer(forKey: "intimidationSkillValue")
         intimidationSkillValue = charapter.intimidationSkillValue
             //Обман
                 //Загрузка селектора мастерства
-        ///LieSkill.selectedSegmentIndex = defaults.integer(forKey: "LieSkill")
         LieSkill.selectedSegmentIndex = charapter.lieSkill
                 //Загрузка общего бонуса
-        ///LieBonus.text = defaults.string(forKey: "LieBonus.text") ?? "0"
         LieBonus.text = charapter.lieBonusText
-        ///lieSkillValue = defaults.integer(forKey: "lieSkillValue")
         lieSkillValue = charapter.lieSkillValue
             //Убеждение
                 //Загрузка селектора мастерства
-        ///BeliefSkill.selectedSegmentIndex = defaults.integer(forKey: "BeliefSkill")
         BeliefSkill.selectedSegmentIndex = charapter.beliefSkill
                 //Загрузка общего бонуса
-        ///BeliefBonus.text = defaults.string(forKey: "BeliefBonus.text") ?? "0"
         BeliefBonus.text = charapter.beliefBonusText
-        ///beliefSkillValue = defaults.integer(forKey: "beliefSkillValue")
         beliefSkillValue = charapter.beliefSkillValue
         
-        // Do any additional setup after loading the view.
     }
     
     //Функции общего бонуса
         //Внимание
     func performanceUpdate() {
         PerformanceBonus.text = "\(Int(bonusCharisma.text!)! + performanceSkillValue)"
-        ///defaults.set(PerformanceBonus.text, forKey: "PerformanceBonus.text")
         charapter.performanceBonusText = PerformanceBonus.text!
     }
         //Выживание
     func intimidationUpdate() {
         IntimidationBonus.text = "\(Int(bonusCharisma.text!)! + intimidationSkillValue)"
-        ///defaults.set(IntimidationBonus.text, forKey: "IntimidationBonus.text")
         charapter.intimidationBonusText = IntimidationBonus.text!
     }
         //Медицина
     func lieUpdate() {
         LieBonus.text = "\(Int(bonusCharisma.text!)! + lieSkillValue)"
-        ///defaults.set(LieBonus.text, forKey: "LieBonus.text")
         charapter.lieBonusText = LieBonus.text!
     }
         //Внимательность
     func beliefUpdate() {
         BeliefBonus.text = "\(Int(bonusCharisma.text!)! + beliefSkillValue)"
-        ///defaults.set(BeliefBonus.text, forKey: "BeliefBonus.text")
         charapter.beliefBonusText = BeliefBonus.text!
     }
 
@@ -337,15 +293,4 @@ class CharismaVC: UIViewController {
         beliefUpdate()
     }
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

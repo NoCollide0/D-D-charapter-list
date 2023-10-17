@@ -31,9 +31,7 @@ class SpellsVC: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         spellsData = (defaults.array(forKey: "spellsData") as? [String]) ?? ["1!lfds"]
-        ///spellsData = charapter.spellsData
         textFieldConter2 = defaults.integer(forKey: "textFieldConterSpells")
-        ///textFieldConter2 = charapter.textFieldConterEquipment
         
         addVStackView()
         loadData()
@@ -47,9 +45,7 @@ class SpellsVC: UIViewController, UITextFieldDelegate {
     
     override func viewWillDisappear(_:Bool) {
         defaults.set(spellsData, forKey: "spellsData")
-        ///charapter.spellsData = spellsData
         defaults.set(textFieldConter2, forKey: "textFieldConterSpells")
-        ///charapter.textFieldConterEquipment = textFieldConter2
     }
     
     

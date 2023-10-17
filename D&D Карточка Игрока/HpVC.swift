@@ -61,14 +61,12 @@ class HpVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         alert.setValue(vc, forKey: "contentViewController")
         alert.addAction(UIAlertAction(title: "Готово", style: .default, handler: { (UIAlertAction) in
             self.selectedRowHp = pickerView.selectedRow(inComponent: 0)
-            ///self.defaults.set(self.selectedRowHp, forKey: "hp")
             charapter.hp = self.selectedRowHp
             self.maxHpLabel0.text = "\(self.selectedRowHp + 1)"
             self.maxHpLabel1.text = "\(self.selectedRowHp + 1)"
             self.currentHpSlider.maximumValue = Float(self.selectedRowHp + 1)
             
             self.selectedRowHpDice = pickerView.selectedRow(inComponent: 1)
-            ///self.defaults.set(self.selectedRowHpDice, forKey: "hpDice")
             charapter.hpDice = self.selectedRowHpDice
             self.HpDiceLabel.text = "\(self.hpDice[self.selectedRowHpDice])"
             self.animationSet()
@@ -81,7 +79,6 @@ class HpVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     //Слайдер текущего ХП
     @IBAction func currentHpSliderChange(_ sender: UISlider) {
         currentHpLabel.text = "Текущее здоровье: \(Int(sender.value.rounded()))"
-        ///defaults.set(sender.value.rounded(), forKey: "currentHp")
         charapter.currentHp = sender.value.rounded()
         animationSet()
     }
@@ -92,8 +89,6 @@ class HpVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     
     
-    
-        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -102,11 +97,8 @@ class HpVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         UserDefaults.standard.register(defaults: defaultValues)
         
         //Загрузки из UserDefaults
-        ///selectedRowHp = defaults.integer(forKey: "hp")
         selectedRowHp = charapter.hp
-        ///selectedRowHpDice = defaults.integer(forKey: "hpDice")
         selectedRowHpDice = charapter.hpDice
-        ///currentHpSlider.value = defaults.float(forKey: "currentHp")
         currentHpSlider.value = charapter.currentHp
         
         //Настройка лейблов
@@ -120,7 +112,6 @@ class HpVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         mainHpView.layer.cornerRadius = 10
         
         //Настройка стартовой точки анимации
-        ///startAnimationPoint = defaults.double(forKey: "startAnimationPoint")
         startAnimationPoint = charapter.startAnimationPoint
         
         //Запуск анимации
@@ -134,9 +125,7 @@ class HpVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     //Отправление данных на главный экран через viewWillDissapear
     override func viewWillDisappear(_:Bool) {
         NotificationCenter.default.post(name: MainScreenVC.deliveryHpValue, object: nil, userInfo: ["hp": maxHpLabel0.text!, "hpDice": HpDiceLabel.text!, "currentHp": currentHpLabel.text!, "endAnimationPoint": startAnimationPoint])
-        ///defaults.set(HpDiceLabel.text, forKey: "hpDiceLabel")
         charapter.hpDiceLabel = HpDiceLabel.text!
-        ///defaults.set(maxHpLabel0.text, forKey: "maxHpLabel")
         charapter.maxHpLabel = maxHpLabel0.text!
     }
     
@@ -151,7 +140,6 @@ class HpVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         HpBarAnimationView.animationSpeed = 2
         HpBarAnimationView.play(fromProgress: startAnimationPoint, toProgress: endAnimationPoint)
         startAnimationPoint = endAnimationPoint
-        ///defaults.set(startAnimationPoint, forKey: "startAnimationPoint")
         charapter.startAnimationPoint = startAnimationPoint
     }
     

@@ -19,7 +19,6 @@ class ConstVC: UIViewController {
     //Сохранение значения стойкости после изменения и присвоение значения лейблу с переводом в инт и далее в стринг
     //А так же отправка значения стойкости через notification
     @IBAction func ConstChange(_ sender: UIStepper) {
-        ///defaults.set(String(Int(ConstStepper.value)), forKey: "constValue")
         charapter.constValue = String(Int(ConstStepper.value))
         constLabel.text = String(Int(ConstStepper.value))
                 
@@ -100,28 +99,12 @@ class ConstVC: UIViewController {
         super.viewDidLoad()
         
         //Загрузка бонуса стойкости
-        ///bonusConst.text = defaults.string(forKey: "bonusConst") ?? "0"
         bonusConst.text = charapter.bonusConst
         
         //Загрузка значения стойкости в степпер и в лейбл при загрузке экрана
-        ///ConstStepper.value = Double(defaults.string(forKey: "constValue") ?? "10")!
         ConstStepper.value = Double(charapter.constValue!)!
         constLabel.text = String(Int(ConstStepper.value))
         
-                
-        // Do any additional setup after loading the view.
     }
-
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

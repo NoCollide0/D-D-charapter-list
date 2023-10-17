@@ -31,9 +31,7 @@ class EquipmentVC: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         equipmentData = (defaults.array(forKey: "equipmentData") as? [String]) ?? ["1!lfds"]
-        ///equipmentData = charapter.equipmentData
         textFieldConter1 = defaults.integer(forKey: "textFieldConterEquipment")
-        ///textFieldConter1 = charapter.textFieldConterEquipment
         
         addVStackView()
         loadData()
@@ -47,9 +45,7 @@ class EquipmentVC: UIViewController, UITextFieldDelegate {
     
     override func viewWillDisappear(_:Bool) {
         defaults.set(equipmentData, forKey: "equipmentData")
-        ///charapter.equipmentData = equipmentData
         defaults.set(textFieldConter1, forKey: "textFieldConterEquipment")
-        ///charapter.textFieldConterEquipment = textFieldConter1
     }
     
     

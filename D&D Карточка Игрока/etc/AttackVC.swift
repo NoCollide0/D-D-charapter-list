@@ -47,9 +47,7 @@ class AttackVC: UIViewController, UITextFieldDelegate {
     
     override func viewWillDisappear(_:Bool) {
         defaults.set(attackData, forKey: "attackData")
-        ///charapter.attackData = attackData
         defaults.set(textFieldConter3, forKey: "textFieldConter")
-        ///charapter.textFieldConter = textFieldConter3
     }
     
     
